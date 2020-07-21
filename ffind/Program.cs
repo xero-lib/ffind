@@ -128,7 +128,7 @@ namespace ffind
             cfg.PrunePaths.Add("/tmp");
             cfg.PrunePaths.Add("/udev");
             cfg.PrunePaths.Add("/var/cache");
-            cfg.PrunePaths.Add("/var/var/lock");
+            cfg.PrunePaths.Add("/var/lock");
             cfg.PrunePaths.Add("/var/run");
             cfg.PrunePaths.Add("/var/spool");
             cfg.PrunePaths.Add("/var/lib/pacman/local"),
