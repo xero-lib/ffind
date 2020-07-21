@@ -127,13 +127,13 @@ namespace ffind
             cfg.PrunePaths.Add("/sfs");
             cfg.PrunePaths.Add("/tmp");
             cfg.PrunePaths.Add("/udev");
-            cfg.PrunePaths.Add("//cache");
-            cfg.PrunePaths.Add("//lock");
-            cfg.PrunePaths.Add("//run");
-            cfg.PrunePaths.Add("//spool");
+            cfg.PrunePaths.Add("/var/cache");
+            cfg.PrunePaths.Add("/var/var/lock");
+            cfg.PrunePaths.Add("/var/run");
+            cfg.PrunePaths.Add("/var/spool");
             cfg.PrunePaths.Add("/var/lib/pacman/local"),
- 	    cfg.PrunePaths.Add("//tmp");
-	    cfg.PrunePaths.Add("//proc");
+ 	    cfg.PrunePaths.Add("/var/tmp");
+	    cfg.PrunePaths.Add("/proc");
         }
 
         public static void UpdateDB()
