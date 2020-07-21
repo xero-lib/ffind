@@ -65,7 +65,8 @@ namespace ffind
                 Console.WriteLine();
                 Console.WriteLine("When searching it searches the ENTIRE path of the file, so keep that in mind.");
                 Console.WriteLine();
-                Console.WriteLine("Created by Krutonium - https://github.com/Krutonium\nRevised by xero-lib - https://github.com/xero-lib");
+                Console.WriteLine("Created by Krutonium - https://github.com/Krutonium");
+		Console.WriteLine("Revised by xero-lib - https://github.com/xero-lib");
                 Console.WriteLine("I borrowed some code for traversing the filesystem cleanly from Microsoft");
                 Console.WriteLine("https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-iterate-through-a-directory-tree");
             }
@@ -90,8 +91,8 @@ namespace ffind
         {
             if (cfg.caseSensitive == false)
             {
-                toFindLower = toFind.ToLower();
-                foreach ( item in fileList)
+                var toFindLower = toFind.ToLower();
+                foreach (for item in fileList)
                 {
                     if (item.ToLower().Contains(toFindLower))
                     {
@@ -101,7 +102,7 @@ namespace ffind
             }
             else
             {
-                foreach (item in fileList)
+                foreach (var item in fileList)
                 {
                     if (item.Contains(toFind))
                     {
