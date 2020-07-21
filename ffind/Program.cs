@@ -92,7 +92,7 @@ namespace ffind
             if (cfg.caseSensitive == false)
             {
                 var toFindLower = toFind.ToLower();
-                foreach (for item in fileList)
+                foreach (var item in fileList)
                 {
                     if (item.ToLower().Contains(toFindLower))
                     {
