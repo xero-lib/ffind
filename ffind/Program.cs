@@ -153,7 +153,7 @@ namespace ffind
             try
             {
                 files = root.GetFiles("*.*");
-             catch (UnauthorizedAccessException e)
+	    }catch (UnauthorizedAccessException e)
            	 {
                 //We're not authorized, and that's fine.
                 Console.WriteLine("Cannot access {0}, Permission Denied, but this is expected.", e);
