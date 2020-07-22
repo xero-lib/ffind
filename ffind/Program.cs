@@ -181,7 +181,7 @@ namespace ffind
                         {
                             try
                             {
-                                 att = File.GetAttributes(dirInfo.FullName);
+                                var att = File.GetAttributes(dirInfo.FullName);
                                 if (!att.HasFlag(FileAttributes.ReparsePoint))
                                 {
                                     //Console.WriteLine("Entering " + dirInfo.FullName);
@@ -207,9 +207,9 @@ namespace ffind
         {
         byte[] compressedBytes;
 
-        using ( uncompressedStream = new MemoryStream(Encoding.UTF8.GetBytes(uncompressedString)))
+        using (var uncompressedStream = new MemoryStream(Encoding.UTF8.GetBytes(uncompressedString)))
         {
-            using ( compressedStream = new MemoryStream())
+            using (var compressedStream = new MemoryStream())
             { 
                 // setting the leaveOpen parameter to true to ensure that compressedStream will not be closed when compressorStream is disposed
                 // this allows compressorStream to close and flush its buffers to compressedStream and guarantees that compressedStream.ToArray() can be called afterward
