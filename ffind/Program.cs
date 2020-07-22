@@ -132,7 +132,7 @@ namespace ffind
             cfg.PrunePaths.Add("/var/run");
             cfg.PrunePaths.Add("/var/spool");
             cfg.PrunePaths.Add("/var/lib/pacman/local"),
- 	    cfg.PrunePaths.Add("/var/tmp");
+		    cfg.PrunePaths.Add("/var/tmp");
 	    cfg.PrunePaths.Add("/proc");
         }
 
@@ -216,14 +216,14 @@ namespace ffind
                 // although MSDN documentation states that ToArray() can be called on a closed MemoryStream, I don't want to rely on that very odd behavior should it ever change
                 if (cfg.shouldCompressDB)
                 {
-                    using ( compressorStream = new DeflateStream(compressedStream, CompressionLevel.Optimal, true))
+                    using (var compressorStream = new DeflateStream(compressedStream, CompressionLevel.Optimal, true))
                     {
                         uncompressedStream.CopyTo(compressorStream);
                     }
                 }
                 else
                 {
-                    using ( compressorStream = new DeflateStream(compressedStream, CompressionLevel.NoCompression, true))
+                    using (var compressorStream = new DeflateStream(compressedStream, CompressionLevel.NoCompression, true))
                     {
                         uncompressedStream.CopyTo(compressorStream);
                     }
@@ -246,11 +246,11 @@ namespace ffind
     {
         byte[] decompressedBytes;
 
-         compressedStream = new MemoryStream(Convert.FromBase64String(compressedString));
+        var compressedStream = new MemoryStream(Convert.FromBase64String(compressedString));
 
-        using ( decompressorStream = new DeflateStream(compressedStream, CompressionMode.Decompress))
+        using (var decompressorStream = new DeflateStream(compressedStream, CompressionMode.Decompress))
         {
-            using ( decompressedStream = new MemoryStream())
+            using (var decompressedStream = new MemoryStream())
             {
                 decompressorStream.CopyTo(decompressedStream);
 
